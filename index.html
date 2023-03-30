@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2048</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        overflow-y: hidden;
+      }
+      body {
+        background-color: black;
+        height: 100vh;
+        display: grid;
+        place-content: center;
+      }
+      #container {
+        --gap: 4px;
+        background-color: rgb(210, 248, 167);
+        width: 95vw;
+        max-width: 432px;
+        display: grid;
+        min-width: 332px;
+        aspect-ratio: 1 / 1;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        gap: var(--gap);
+        padding: 4px;
+        position: relative;
+      }
+      .cell {
+        background-color: aqua;
+      }
+      .card {
+        --x: 1;
+        --y: 1;
+        color: white;
+        position: absolute;
+        display: grid;
+        width: 100%;
+        height: 100%;
+        top: calc(var(--y) * (100% + var(--gap)));
+        left: calc(var(--x) * (100% + var(--gap)));
+        place-content: center;
+        font-size: 1rem;
+        background-color: green;
+        transition: all 70ms ease;
+      }
+      @keyframes show {
+        0% {
+          opacity: 0;
+          transform: scale(0);
+        }
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+      @keyframes merge {
+        0% {
+          transform: scale(1.2);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+      .n2 {
+        background-color: blue;
+        color: white;
+      }
+      .n2048 {
+        background-color: yellow;
+        color: brown;
+      }
+      .tileholder {
+        position: relative;
+      }
+      .tiles-container {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        gap: var(--gap);
+        padding: var(--gap);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="tiles-container">
+        <div class="tileholder"></div>
+      </div>
+    </div>
+  </body>
+  <script src="game.js" defer></script>
+</html>
