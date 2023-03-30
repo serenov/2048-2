@@ -1,3 +1,16 @@
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker
+    .register("serviceworker.js")
+    .then((Registration) => {
+      console.log("SW Registered");
+      console.log(Registration);
+    })
+    .catch((error) => {
+      console.log("SW Registration Failed!");
+      console.log(error);
+    });
+}
+
 board = [
   [null, null, null, null],
   [null, null, null, null],
@@ -31,7 +44,6 @@ function randomTileGenerator() {
   do {
     rand = Math.floor(Math.random() * 16);
   } while (board[Math.floor(rand / 4)][rand % 4] !== null);
-  console.log(rand);
   document
     .querySelector(".tileholder")
     .append(tileGenerator(2, rand % 4, Math.floor(rand / 4)));
