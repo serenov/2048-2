@@ -48,6 +48,9 @@ function randomTileGenerator() {
     .querySelector(".tileholder")
     .append(tileGenerator(2, rand % 4, Math.floor(rand / 4)));
 }
+function testTileGenerator(x, y, value) {
+  document.querySelector(".tileholder").append(tileGenerator(value, x, y));
+}
 
 function move(direction) {
   var effy, effx, coord;
@@ -170,5 +173,6 @@ function handler(event) {
   if (move(offset)) randomTileGenerator();
 }
 
-randomTileGenerator();
-randomTileGenerator();
+testTileGenerator(3, 0, 8);
+testTileGenerator(3, 2, 4);
+testTileGenerator(3, 3, 4);
