@@ -1,0 +1,17 @@
+{
+  "background_color": "#b6ede9",
+  "description": "A clone of 2048... type all it with my very fingers!!!",
+  "dir": "ltr",
+  "display": "fullscreen",
+  "name": "2048",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "2048",
+  "start_url": "/index.html",
+  "theme_color": "#fbefef",
+  "categories": [],
+  "screenshots": [],
+  "icons": [],
+  "shortcuts": [],
+  "lang": "en"
+}

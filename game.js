@@ -34,7 +34,7 @@ function randomTileGenerator() {
   console.log(rand);
   document
     .querySelector(".tileholder")
-    .append(tileGenerator(2, rand % 4, Math.floor(rand / 4)));
+    .append(tileGenerator(2048, rand % 4, Math.floor(rand / 4)));
 }
 
 function move(direction) {
