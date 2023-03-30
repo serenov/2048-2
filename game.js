@@ -30,13 +30,13 @@ var fingerCount;
 
 function tileGenerator(value, x, y) {
   const div = document.createElement("div");
-  div.classList.add("card");
+  div.classList.add("card", `n${value}`);
   div.innerHTML = value;
   div.value = value;
   if (board[y][x] === null) {
     div.style = `--x: ${x}; --y: ${y}; animation: show 500ms;`;
     board[y][x] = div;
-  } else div.style = `--x: ${x}; --y: ${y}; animation: merge 250ms`;
+  } else div.style = `--x: ${x}; --y: ${y}; animation: merge 200ms`;
   return div;
 }
 function randomTileGenerator() {
@@ -173,6 +173,6 @@ function handler(event) {
   if (move(offset)) randomTileGenerator();
 }
 
-testTileGenerator(3, 0, 8);
-testTileGenerator(3, 2, 4);
-testTileGenerator(3, 3, 4);
+randomTileGenerator(3, 0, 8);
+randomTileGenerator(3, 2, 4);
+randomTileGenerator(3, 3, 4);
